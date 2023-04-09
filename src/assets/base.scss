@@ -19,6 +19,8 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  // --el-fill-color-light: #FAEEC7;
 }
 
 /* semantic color variables for this project */
@@ -64,11 +66,46 @@ body {
   color: var(--color-text);
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@include b(row) {
+  display: flex;
+  flex-wrap: wrap;
+  // position: relative;
+
+  @include when(justify-center) {
+    justify-content: center;
+  }
+  @include when(justify-end) {
+    justify-content: flex-end;
+  }
+  @include when(justify-space-between) {
+    justify-content: space-between;
+  }
+  @include when(justify-space-around) {
+    justify-content: space-around;
+  }
+  @include when(justify-space-evenly) {
+    justify-content: space-evenly;
+  }
+  @include when(align-middle) {
+    align-items: center;
+  }
+  @include when(align-bottom) {
+    align-items: flex-end;
+  }
+
+  @include when(vertical) {
+    flex-direction: column;
+  }
+}
+
+@include b(btn) {
+  cursor: pointer;
 }

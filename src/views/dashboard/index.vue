@@ -1,5 +1,10 @@
-<script setup></script>
+<script setup lang="ts">
+import Search from '@/components/search/index.vue'
+defineProps<{}>()
+</script>
 
-<template></template>
+<template>
+  <Search />
+</template>
 
 <style scoped></style>
